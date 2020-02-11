@@ -1,0 +1,17 @@
+.MultiFile-label {
+  background-color : #D8D8D0;
+  border-radius    : 3px;
+  font-size        : 12px;
+  margin-top       : 5px;
+  max-width        : 350px;
+  padding          : 10px;
+
+}
+.MultiFile-remove {
+  background  : url('cancel.png') 0 0 no-repeat;
+  float       : right;
+  height      : 16px;
+  text-indent : -9999px;
+  width       : 16px;
+}
+
