@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63421c57-d226-4c4f-bac9-15804f426fbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sessionControl.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/sessionControl.ajax.php" afterDir="false" />
-    </list>
+    <list default="true" id="63421c57-d226-4c4f-bac9-15804f426fbc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,26 +97,8 @@
     </option>
   </component>
   <component name="SvnConfiguration" cleanupOnStartRun="true">
-    <configuration>C:\Users\Ignacio\AppData\Roaming\Subversion</configuration>
+    <configuration>C:\Users\skybax\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
-  </component>
-  <component name="SvnFileUrlMappingImpl">
-    <option name="myMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\xampp\htdocs\sisplan_template" />
-          <option name="myCopyRoot" value="C:\xampp\htdocs\sisplan_template" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
-    <option name="myMoreRealMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\xampp\htdocs\sisplan_template" />
-          <option name="myCopyRoot" value="C:\xampp\htdocs\sisplan_template" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -206,6 +185,8 @@
       <workItem from="1580732082399" duration="778000" />
       <workItem from="1580752738988" duration="48042000" />
       <workItem from="1581334225219" duration="10548000" />
+      <workItem from="1581632569632" duration="646000" />
+      <workItem from="1581636972242" duration="746000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1549027001012</created>
