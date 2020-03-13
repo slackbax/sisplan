@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	var tableUsr = $("#tpeople").DataTable({
-		"columns": [{width: "100px", className: "text-right"}, {width: "20%"}, null, null, null, {"orderable": false, width: "70px", className: "text-center"}],
+		"columns": [{width: "100px", className: "text-right"}, null, null, {"orderable": false, width: "70px", className: "text-center"}],
 		'order': [[2, 'asc']]
 	});
 
@@ -103,8 +103,6 @@ $(document).ready(function () {
 				tableUsr.row.add([
 					v.per_rut,
 					v.per_nombres,
-					v.per_ap,
-					v.per_am,
 					v.per_profesion,
 					'<a class="peopleProgram btn btn-xs btn-info" href="index.php?section=agenda&sbs=setagenda&iden=' + iden + '" data-tooltip="tooltip" data-placement="top" title="Agendar"><i class="fa fa-pencil"></i></a>'
 				]);

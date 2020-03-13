@@ -19,7 +19,7 @@ if (extract($_POST)):
 		$db->autoCommit(FALSE);
 
 		if ($_new):
-			$ins = $per->set(strtoupper($irut), strtoupper($iname), $iprofesion, '', strtoupper($iespec), $db);
+			$ins = $per->set(strtoupper($irut), strtoupper($iname), $iprofesion, strtoupper($iespec), $db);
 
 			if (!$ins['estado']):
 				throw new Exception('Error al guardar los datos de la persona. ' . $ins['msg']);

@@ -2,7 +2,8 @@
 
 class DistHorasProg {
 
-	public function __construct() {
+	public function __construct()
+	{
 	}
 
 	/**
@@ -10,7 +11,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return stdClass
 	 */
-	public function get($id, $db = null) {
+	public function get($id, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -44,7 +46,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return array
 	 */
-	public function getAll($db = null) {
+	public function getAll($db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -68,7 +71,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return array
 	 */
-	public function getByDist($id, $db = null) {
+	public function getByDist($id, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -95,7 +99,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return mixed
 	 */
-	public function getNumByPerDate($id, $date_i, $date_t, $db = null) {
+	public function getNumByPerDate($id, $date_i, $date_t, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -122,7 +127,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return stdClass
 	 */
-	public function getByPerTHDate($id, $th, $date, $db = null) {
+	public function getByPerTHDate($id, $th, $date, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -166,7 +172,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return stdClass
 	 */
-	public function getByDistTH($id, $th, $db = null) {
+	public function getByDistTH($id, $th, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -209,7 +216,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return stdClass
 	 */
-	public function getByTHDate($dist, $date_i, $date_t, $thor, $db = null) {
+	public function getByTHDate($dist, $date_i, $date_t, $thor, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -245,39 +253,12 @@ class DistHorasProg {
 	}
 
 	/**
-	 * @param $dist
-	 * @param $date_i
-	 * @param $date_t
-	 * @param $thor
-	 * @param $db
-	 * @return string
-	 */
-	public function getByTypePeople($dist, $date_i, $date_t, $thor, $db = null) {
-		if (is_null($db)):
-			$db = new myDBC();
-		endif;
-
-		$stmt = $db->Prepare("SELECT dhp_cantidad FROM prm_dist_horas_prog dh
-                                    JOIN prm_distribucion_prog d ON dh.disp_id = d.disp_id
-                                    WHERE d.disp_id = ? AND d.disp_fecha_ini = ? AND d.disp_fecha_ter = ? AND acp_id = ?");
-
-		$stmt->bind_param("issi", $dist, $date_i, $date_t, $thor);
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$row = $result->fetch_assoc();
-		$obj = $row['dhp_cantidad'];
-		if ($obj == ''): $obj = '0.00'; endif;
-
-		unset($db);
-		return $obj;
-	}
-
-	/**
 	 * @param $disp
 	 * @param $db
 	 * @return string
 	 */
-	public function getByConsCont($disp, $db = null) {
+	public function getByConsCont($disp, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -302,208 +283,28 @@ class DistHorasProg {
 
 	/**
 	 * @param $disp
-	 * @param $db
+	 * @param $cat
+	 * @param null $db
 	 * @return string
 	 */
-	public function getHorasByConsCont($disp, $db = null) {
+	public function getByCategory($disp, $cat, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
 
-		$stmt = $db->Prepare("SELECT SUM(dhp_cantidad) AS total FROM prm_dist_horas_prog dh
-                                    JOIN prm_distribucion_prog d ON dh.disp_id = d.disp_id
-                                    WHERE d.disp_id = ?
-                                    AND (acp_id = 5 OR acp_id = 6 OR acp_id = 7)");
+		$stmt = $db->Prepare("SELECT SUM(dhp_cantidad) AS total 
+									FROM prm_dist_horas_prog dh
+									JOIN prm_actividad_prog pap on dh.acp_id = pap.acp_id
+                                    WHERE dh.disp_id = ?
+                                    AND pap.acp_clasificacion = ?");
 
-		$stmt->bind_param("i", $db->clearText($disp));
+		$stmt->bind_param("is", $disp, $cat);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$row = $result->fetch_assoc();
 		$obj = $row['total'];
-		if ($obj == ''): $obj = '0.00';
-		else: $obj = number_format($obj, 2, '.', '');
-		endif;
-
-		unset($db);
-		return $obj;
-	}
-
-	/**
-	 * @param $disp
-	 * @param $db
-	 * @return string
-	 */
-	public function getByProcedimientos($disp, $db = null) {
-		if (is_null($db)):
-			$db = new myDBC();
-		endif;
-
-		$stmt = $db->Prepare("SELECT SUM(dhp_cantidad * dhp_rendimiento) AS total FROM prm_dist_horas_prog dh
-                                    JOIN prm_distribucion_prog d ON dh.disp_id = d.disp_id
-                                    WHERE d.disp_id = ?
-                                    AND (acp_id = 9 OR (acp_id BETWEEN 27 AND 99))");
-
-		$stmt->bind_param("i", $disp);
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$row = $result->fetch_assoc();
-		$obj = $row['total'];
-		if ($obj == ''): $obj = '0.00';
-		else: $obj = number_format($obj, 2, '.', '');
-		endif;
-
-		unset($db);
-		return $obj;
-	}
-
-	/**
-	 * @param $disp
-	 * @param $db
-	 * @return string
-	 */
-	public function getHorasByProcedimientos($disp, $db = null) {
-		if (is_null($db)):
-			$db = new myDBC();
-		endif;
-
-		$stmt = $db->Prepare("SELECT SUM(dhp_cantidad) AS total FROM prm_dist_horas_prog dh
-                                    JOIN prm_distribucion_prog d ON dh.disp_id = d.disp_id
-                                    WHERE d.disp_id = ?
-                                    AND (acp_id = 9 OR (acp_id BETWEEN 27 AND 99))");
-
-		$stmt->bind_param("i", $db->clearText($disp));
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$row = $result->fetch_assoc();
-		$obj = $row['total'];
-		if ($obj == ''): $obj = '0.00';
-		else: $obj = number_format($obj, 2, '.', '');
-		endif;
-
-		unset($db);
-		return $obj;
-	}
-
-	/**
-	 * @param $disp
-	 * @param $db
-	 * @return string
-	 */
-	public function getHorasByAdmin($disp, $db = null) {
-		if (is_null($db)):
-			$db = new myDBC();
-		endif;
-
-		$stmt = $db->Prepare("SELECT SUM(dhp_cantidad) AS total FROM prm_dist_horas_prog dh
-                                    JOIN prm_distribucion_prog d ON dh.disp_id = d.disp_id
-                                    WHERE d.disp_id = ?
-                                    AND (acp_id = 18 OR acp_id = 19 OR acp_id = 21)");
-
-		$stmt->bind_param("i", $db->clearText($disp));
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$row = $result->fetch_assoc();
-		$obj = $row['total'];
-		if ($obj == ''): $obj = '0.00';
-		else: $obj = number_format($obj, 2, '.', '');
-		endif;
-
-		unset($db);
-		return $obj;
-	}
-
-	/**
-	 * @param $disp
-	 * @param $db
-	 * @return string
-	 */
-	public function getByOther($disp, $db = null) {
-		if (is_null($db)):
-			$db = new myDBC();
-		endif;
-
-		$stmt = $db->Prepare("SELECT SUM(dhp_cantidad * dhp_rendimiento) AS total FROM prm_dist_horas_prog dh
-                                    JOIN prm_distribucion_prog d ON dh.disp_id = d.disp_id
-                                    WHERE d.disp_id = ?
-                                    AND (acp_ID NOT BETWEEN 1 AND 4) AND (acp_id NOT BETWEEN 5 AND 10) AND (acp_id NOT BETWEEN 27 AND 99) AND (acp_id <> 17 AND acp_id <> 18 AND acp_id <> 19 AND acp_id <> 21)");
-
-		$stmt->bind_param("i", $db->clearText($disp));
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$row = $result->fetch_assoc();
-		$obj = $row['total'];
-		if ($obj == ''): $obj = '0.00';
-		else: $obj = number_format($obj, 2, '.', '');
-		endif;
-
-		unset($db);
-		return $obj;
-	}
-
-	/**
-	 * @param $disp
-	 * @param $db
-	 * @return string
-	 */
-	public function getHorasByOther($disp, $db = null) {
-		if (is_null($db)):
-			$db = new myDBC();
-		endif;
-
-		$stmt = $db->Prepare("SELECT SUM(dhp_cantidad) AS total FROM prm_dist_horas_prog dh
-                                    JOIN prm_distribucion_prog d ON dh.disp_id = d.disp_id
-                                    WHERE d.disp_id = ?
-                                    AND (acp_ID NOT BETWEEN 1 AND 4) AND (acp_id NOT BETWEEN 5 AND 10) AND (acp_id NOT BETWEEN 27 AND 99) AND (acp_id <> 17 AND acp_id <> 18 AND acp_id <> 19 AND acp_id <> 21)");
-
-		$stmt->bind_param("i", $db->clearText($disp));
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$row = $result->fetch_assoc();
-		$obj = $row['total'];
-		if ($obj == ''): $obj = '0.00';
-		else: $obj = number_format($obj, 2, '.', '');
-		endif;
-
-		unset($db);
-		return $obj;
-	}
-
-	/**
-	 * @param $esp
-	 * @param $th
-	 * @param $db
-	 * @return stdClass
-	 */
-	public function getByEspTH($esp, $th, $db = null) {
-		if (is_null($db)):
-			$db = new myDBC();
-		endif;
-
-		$stmt = $db->Prepare("SELECT * FROM prm_dist_horas_prog dh
-                                    JOIN prm_distribucion_prog d ON dh.disp_id = d.disp_id
-                                    WHERE d.esp_id = ? AND dh.acp_id = ?");
-
-		$stmt->bind_param("ii", $esp, $th);
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$obj = new stdClass();
-
-		$row = $result->fetch_assoc();
-
-		$obj->dhp_id = $row['dhp_id'];
-		$obj->dhp_pesid = $row['pes_id'];
-		$obj->dhp_acpid = $row['acp_id'];
-		$obj->dhp_fecha_ini = $row['disp_fecha_ini'];
-		$obj->dhp_fecha_ter = $row['disp_fecha_ter'];
-		$obj->dhp_cantidad = $row['dhp_cantidad'];
-		$obj->dhp_rendimiento = $row['dhp_rendimiento'];
-		$obj->dhp_observacion = utf8_encode($row['dhp_observacion']);
-
-		if ($obj->dhp_id == ''):
-			$obj->dhp_cantidad = '0.00';
-			$obj->dhp_rendimiento = '0.00';
-			$obj->dhp_observacion = '';
-		endif;
+		$obj = number_format($obj, 2, '.', '');
 
 		unset($db);
 		return $obj;
@@ -518,7 +319,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return array
 	 */
-	public function set($dist, $thor, $cant, $rend, $obs, $db = null) {
+	public function set($dist, $thor, $cant, $rend, $obs, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
@@ -560,7 +362,8 @@ class DistHorasProg {
 	 * @param $db
 	 * @return array
 	 */
-	public function delByDist($id, $db = null) {
+	public function delByDist($id, $db = null)
+	{
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;

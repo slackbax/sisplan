@@ -473,7 +473,7 @@ class Persona {
 		$lista = [];
 
 		while ($row = $result->fetch_assoc()):
-			$lista[] = array('value' => utf8_encode($row['per_id']) . ': ' . utf8_encode($row['per_nombres'] . ' ' . $row['per_ap'] . ' ' . $row['per_am']));
+			$lista[] = array('value' => utf8_encode($row['per_id']) . ': ' . utf8_encode($row['per_nombres']));
 		endwhile;
 
 		unset($db);
@@ -505,19 +505,18 @@ class Persona {
 	 * @param $rut
 	 * @param $nombre
 	 * @param $prof
-	 * @param $rec
 	 * @param $espec
 	 * @param null $db
 	 * @return array
 	 */
-	public function set($rut, $nombre, $prof, $rec, $espec, $db = null) {
+	public function set($rut, $nombre, $prof, $espec, $db = null) {
 		if (is_null($db)):
 			$db = new myDBC();
 		endif;
 
 		try {
-			$stmt = $db->Prepare("INSERT INTO prm_persona (per_rut, prof_id, per_nombres, per_rec, per_sis) 
-                                     VALUES (?, ?, ?, ?, ?)");
+			$stmt = $db->Prepare("INSERT INTO prm_persona (per_rut, prof_id, per_nombres, per_sis) 
+                                     VALUES (?, ?, ?, ?)");
 
 			if (!$stmt):
 				throw new Exception("La inserción de la persona falló en su preparación.");
@@ -526,9 +525,8 @@ class Persona {
 			$rut = utf8_decode($db->clearText($rut));
 			$prof = $db->clearText($prof);
 			$nombre = utf8_decode($db->clearText(mb_strtoupper($nombre, 'UTF-8')));
-			$rec = utf8_decode($db->clearText($rec));
 			$espec = utf8_decode($db->clearText($espec));
-			$bind = $stmt->bind_param("sisss", $rut, $prof, $nombre, $rec, $espec);
+			$bind = $stmt->bind_param("siss", $rut, $prof, $nombre, $espec);
 			if (!$bind):
 				throw new Exception("La inserción de la persona falló en su binding.");
 			endif;

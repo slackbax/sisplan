@@ -126,8 +126,6 @@
 				<tr>
 					<th>RUT</th>
 					<th>Nombre</th>
-					<th>Apellido Paterno</th>
-					<th>Apellido Materno</th>
 					<th>Profesión</th>
 					<th></th>
 				</tr>

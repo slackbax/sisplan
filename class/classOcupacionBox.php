@@ -64,7 +64,7 @@ class OcupacionBox {
 		$obj->rango_hora = $row['bh_hora_ini'] . " a " . $row['bh_hora_ter'];
 		$obj->programado = $row['bh_programado'];
 		$obj->prof_nombre = $row['prof_nombre'];
-		$obj->per_nombres = $row['per_nombres'] . " " . $row['per_ap'] . " " . $row['per_am'];
+		$obj->per_nombres = $row['per_nombres'];
 
 		unset($db);
 		return $obj;

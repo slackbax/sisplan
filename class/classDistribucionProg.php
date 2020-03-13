@@ -309,7 +309,7 @@ class DistribucionProg {
 									AND ap.acp_id <> 1
 									AND disp_ultima = 1
 									$cond $estab
-									ORDER BY p.per_ap, p.per_am, p.per_nombres, pes_correlativo, ap.acp_id");
+									ORDER BY p.per_nombres, pes_correlativo, ap.acp_id");
 
 		$date_ini = $db->clearText($date_ini);
 		$date_ter = $db->clearText($date_ter);
@@ -381,7 +381,7 @@ class DistribucionProg {
 		$sserv = ($serv != '') ? "AND d.ser_id = $serv" : '';
 		$sesp = ($esp != '') ? "AND d.esp_id = $esp" : '';
 
-		$stmt = $db->Prepare("SELECT p.per_id, p.per_rut, p.per_nombres, p.per_ap, p.per_am, pr.prof_id, pr.prof_nombre, s.ser_nombre, e.esp_id, e.esp_nombre
+		$stmt = $db->Prepare("SELECT p.per_id, p.per_rut, p.per_nombres, pr.prof_id, pr.prof_nombre, s.ser_nombre, e.esp_id, e.esp_nombre
                                     FROM prm_distribucion_prog d
                                     JOIN prm_persona_establecimiento ppe on d.pes_id = ppe.pes_id 
                                     JOIN prm_persona p ON ppe.per_id = p.per_id
@@ -391,7 +391,7 @@ class DistribucionProg {
                                     WHERE YEAR(disp_fecha_ini) = ? AND YEAR(disp_fecha_ter) = ?
                                     $estab $cond $scr $sserv $sesp
                                     GROUP BY p.per_id, e.esp_id
-                                    ORDER BY e.esp_nombre ASC, p.per_ap ASC, p.per_am ASC, p.per_nombres ASC");
+                                    ORDER BY e.esp_nombre ASC, p.per_nombres ASC");
 
 		$stmt->bind_param("ss", $db->clearText($year), $db->clearText($year));
 		$stmt->execute();
@@ -403,8 +403,6 @@ class DistribucionProg {
 			$obj->per_id = $row['per_id'];
 			$obj->per_rut = $row['per_rut'];
 			$obj->per_nombres = utf8_encode($row['per_nombres']);
-			$obj->per_ap = utf8_encode($row['per_ap']);
-			$obj->per_am = utf8_encode($row['per_am']);
 			$obj->per_profid = $row['prof_id'];
 			$obj->per_profesion = utf8_encode($row['prof_nombre']);
 			$obj->per_servicio = utf8_encode($row['ser_nombre']);

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sisplan.iml" filepath="$PROJECT_DIR$/.idea/sisplan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sisplan_template.iml" filepath="$PROJECT_DIR$/.idea/sisplan_template.iml" />
     </modules>
   </component>
 </project>
