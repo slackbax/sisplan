@@ -473,31 +473,30 @@ class Agenda {
 			$db = new myDBC();
 		endif;
 
-		$cond = '';
-
 		switch ($planta):
 			case '0':
-				$cond = "AND p.prof_id = 6";
+				$cond = "AND p.prof_id = 14";
 				break;
 			case '1':
-				$cond = "AND p.prof_id <> 6 AND p.prof_id <> 8";
+				$cond = "AND p.prof_id <> 14 AND p.prof_id <> 4 AND p.prof_id <> 16";
 				break;
 			case '2':
-				$cond = "AND p.prof_id = 8";
+				$cond = "AND p.prof_id = 4 OR p.prof_id = 16";
 				break;
 			default:
+				$cond = '';
 				break;
 		endswitch;
 
 		$estab = ($est != '') ? "AND pe.est_id = $est" : "";
 		$spec = ($espec != '') ? "AND dp.esp_id = $espec" : '';
 
-		$stmt = $db->Prepare("SELECT DISTINCT(p.per_id), p.per_rut, per_nombres, per_ap, per_am, prof_nombre
+		$stmt = $db->Prepare("SELECT DISTINCT(p.per_id), p.per_rut, per_nombres, prof_nombre
 									FROM prm_persona p
-									JOIN prm_distribucion_prog dp ON p.per_id = dp.per_id
-									LEFT JOIN prm_profesion ps ON p.prof_id = ps.prof_id
 									JOIN prm_persona_establecimiento pe ON p.per_id = pe.per_id
-									WHERE (jus_id IS OR jus_id <> 5 OR jus_id <> 20 OR jus_id <> 21 OR jus_id <> 23 OR jus_id <> 24)
+									JOIN prm_distribucion_prog dp ON pe.pes_id = dp.pes_id
+									JOIN prm_profesion ps ON p.prof_id = ps.prof_id
+									WHERE (jus_id IS NULL OR jus_id <> 5 OR jus_id <> 20 OR jus_id <> 21 OR jus_id <> 23 OR jus_id <> 24)
 									AND ser_id = ?
 									AND YEAR(disp_fecha_ini) = ?
 									AND disp_ultima = TRUE
@@ -506,7 +505,8 @@ class Agenda {
 									$cond $estab $spec");
 
 		$date = $year . '-' . $periodo . '-00';
-		$stmt->bind_param("issi", $servicio, $db->clearText($year), $db->clearText($date), $espec);
+		$year = $db->clearText($year);
+		$stmt->bind_param("issi", $servicio, $year, $date, $espec);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$lista['data'] = [];
@@ -521,8 +521,6 @@ class Agenda {
 			$obj->per_id = $row['per_id'];
 			$obj->per_rut = utf8_encode($row['per_rut']);
 			$obj->per_nombres = utf8_encode($row['per_nombres']);
-			$obj->per_ap = utf8_encode($row['per_ap']);
-			$obj->per_am = utf8_encode($row['per_am']);
 			$obj->per_profesion = utf8_encode($row['prof_nombre']);
 			$lista['data'][] = $obj;
 		endwhile;

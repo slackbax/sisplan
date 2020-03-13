@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63421c57-d226-4c4f-bac9-15804f426fbc" name="Default Changelist" comment="Sesiones + arreglos varios">
+    <list default="true" id="63421c57-d226-4c4f-bac9-15804f426fbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/Planilla Programacion Planta No Medica 118100 2020_1581345377.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agenda/list-people.js" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/list-people.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agenda/list-people.php" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/list-people.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/classAgenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classAgenda.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/ajax.getServerProgramPerc.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports/ajax.getServerProgramPerc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/view-perc.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/view-perc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/view-perc.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports/view-perc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +18,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable path="composer" />
+      <executable />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -32,6 +37,11 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="sisplan" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sisplan" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
     </expand>
     <select />
   </component>
@@ -42,8 +52,10 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="$USER_HOME$/AppData/Roaming/npm/node_modules/bower" />
+    <bower.json value="$PROJECT_DIR$/bower.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -61,7 +73,6 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1Pxls5Kepr2OudTXovKjCmf5r7O" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -71,7 +82,7 @@
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sisplan" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,7 +92,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -103,6 +114,24 @@
   <component name="SvnConfiguration" cleanupOnStartRun="true">
     <configuration>C:\Users\Ignacio\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\xampp\htdocs\sisplan_template" />
+          <option name="myCopyRoot" value="C:\xampp\htdocs\sisplan_template" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\xampp\htdocs\sisplan_template" />
+          <option name="myCopyRoot" value="C:\xampp\htdocs\sisplan_template" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -188,21 +217,17 @@
       <workItem from="1580483723070" duration="8682000" />
       <workItem from="1580732082399" duration="778000" />
       <workItem from="1580752738988" duration="48042000" />
-      <workItem from="1581334225219" duration="10548000" />
-      <workItem from="1581693518960" duration="2089000" />
-      <workItem from="1581695824995" duration="1080000" />
-      <workItem from="1581716227108" duration="74000" />
-      <workItem from="1583109988207" duration="345000" />
-      <workItem from="1583164517302" duration="250000" />
-      <workItem from="1583627804275" duration="3164000" />
-      <workItem from="1584055754780" duration="126000" />
-    </task>
-    <task id="LOCAL-00001" summary="update">
-      <created>1549027001012</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1549027001012</updated>
+      <workItem from="1581334225219" duration="23369000" />
+      <workItem from="1581608914943" duration="68000" />
+      <workItem from="1581692725358" duration="791000" />
+      <workItem from="1581695788133" duration="7000" />
+      <workItem from="1581702185362" duration="1336000" />
+      <workItem from="1581937686082" duration="90000" />
+      <workItem from="1581937905799" duration="1285000" />
+      <workItem from="1581951656666" duration="750000" />
+      <workItem from="1584015736409" duration="9877000" />
+      <workItem from="1584098356941" duration="3719000" />
+      <workItem from="1584111914865" duration="573000" />
     </task>
     <task id="LOCAL-00002" summary="update">
       <created>1549030580422</created>
@@ -512,18 +537,48 @@
       <option name="project" value="LOCAL" />
       <updated>1581424313996</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Sesion control por ajax">
+      <created>1581424944549</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1581424944549</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Eliminacion de campos en Persona + reporte de contratos">
+      <created>1581608979421</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1581608979421</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Update">
+      <created>1584016596299</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1584016596299</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Reporte PERC">
+      <created>1584038359865</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1584038359865</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Ajustes a reporte PERC + 1er reacondicionamiento de agenta">
+      <created>1584112485888</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1584112485888</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creacion de programacion radiologia" />
-    <MESSAGE value="creacion de programacion rehabilitacion" />
-    <MESSAGE value="edicion de programacion con imageno/rehab" />
-    <MESSAGE value="correccion de bugs" />
-    <MESSAGE value="ups" />
     <MESSAGE value="correccion a guardado de horas" />
     <MESSAGE value="edicion de usuarios&#10;reporte de sms enviados" />
     <MESSAGE value="reporte de sms recibidos" />
@@ -544,7 +599,12 @@
     <MESSAGE value="Reporte de programacion por plantas" />
     <MESSAGE value="Filtro de ultima programacion ingresada" />
     <MESSAGE value="Sesiones + arreglos varios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sesiones + arreglos varios" />
+    <MESSAGE value="Sesion control por ajax" />
+    <MESSAGE value="Eliminacion de campos en Persona + reporte de contratos" />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Reporte PERC" />
+    <MESSAGE value="Ajustes a reporte PERC + 1er reacondicionamiento de agenta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustes a reporte PERC + 1er reacondicionamiento de agenta" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580485006274">
@@ -555,18 +615,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="640" y="277" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580472458426" />
-    <state x="172" y="49" width="1556" height="982" key="CommitChangelistDialog2" timestamp="1581695676869">
+    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584021594051">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="172" y="49" width="1556" height="982" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581695676869" />
-    <state x="717" y="451" key="ComposerInitDialogKey" timestamp="1581695933919">
+    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584021594051" />
+    <state x="172" y="49" width="1556" height="982" key="CommitChangelistDialog2" timestamp="1584112483101">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="717" y="451" key="ComposerInitDialogKey/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581695933919" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1581695858543">
+    <state x="172" y="49" width="1556" height="982" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584112483101" />
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1581693515800">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581695858543" />
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581693515800" />
     <state width="281" height="539" key="HiddenNamespacesPopup" timestamp="1580485009483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -575,10 +635,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="737" y="340" key="NewPhpClassDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1579633442338" />
-    <state x="461" y="183" key="SettingsEditor" timestamp="1581695909514">
+    <state x="777" y="460" key="NewPhpFileDialog" timestamp="1584021550231">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="461" y="183" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581695909514" />
+    <state x="777" y="460" key="NewPhpFileDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584021550231" />
+    <state x="461" y="183" key="SettingsEditor" timestamp="1580485229724">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="183" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580485229724" />
     <state width="200" height="523" key="SqlResolveConfigurable" timestamp="1580484593066">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -591,22 +655,21 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="676" y="261" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580483573435" />
-    <state x="631" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1583164517122">
-      <screen x="0" y="0" width="1920" height="1027" />
+    <state x="631" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1584098356739">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="631" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1027@0.0.1920.1027" timestamp="1583164517122" />
-    <state x="631" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581695823984" />
+    <state x="631" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584098356739" />
     <state x="776" y="379" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581424583016">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="776" y="379" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581424583016" />
-    <state x="449" y="112" width="1008" height="793" key="find.popup" timestamp="1581361433138">
+    <state x="449" y="112" width="1008" height="793" key="find.popup" timestamp="1581595248845">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="449" y="112" width="1008" height="793" key="find.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581361433138" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1581693586330">
+    <state x="449" y="112" width="1008" height="793" key="find.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581595248845" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580842944417">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581693586330" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580842944417" />
   </component>
 </project>

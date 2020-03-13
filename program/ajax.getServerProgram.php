@@ -48,7 +48,7 @@ $columns = array(
             $p = new Persona();
             $per = $p->get($d);
             
-            return $per->per_ap . ' ' . $per->per_am . ' ' . $per->per_nombres;
+            return $per->per_nombres;
         }
     ),
     array(

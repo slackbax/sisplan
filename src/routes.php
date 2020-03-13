@@ -11,9 +11,7 @@ if (!isset($section) || $section == 'home'):
 	include 'main/main-index.php';
 elseif ($section == 'program' and $_login):
 	// programacion
-	if (!isset($sbs)):
-		include 'program/program-index.php';
-	elseif ($sbs == 'listpeople'):
+	if ($sbs == 'listpeople'):
 		include 'program/list-people.php';
 	elseif ($sbs == 'createprogram'):
 		include 'program/create-program.php';
@@ -29,27 +27,15 @@ elseif ($section == 'program' and $_login):
 	// personal
 	elseif ($sbs == 'createpersonal'):
 		include 'program/create-people.php';
-	// other
-	else:
-		include 'src/error.php';
-	endif;
-elseif ($section == 'planif' and $_login):
-	// planificacion
-	if (!isset($sbs)):
-		include 'planification/planification-index.php';
-	elseif ($sbs == 'listpeopleplanif'):
-		include 'planification/list-people.php';
-	elseif ($sbs == 'createplanification'):
-		include 'planification/create-planification.php';
+	elseif ($sbs == 'managepersonal'):
+		include 'program/manage-people.php';
 	// other
 	else:
 		include 'src/error.php';
 	endif;
 elseif ($section == 'agenda' and $_login):
 	// agenda
-	if (!isset($sbs)):
-		include 'agenda/agenda-index.php';
-	elseif ($sbs == 'createagenda' and $_admin):
+	if ($sbs == 'createagenda' and $_admin):
 		include 'agenda/list-people.php';
 	elseif ($sbs == 'setagenda'):
 		include 'agenda/create-agenda.php';
@@ -73,9 +59,7 @@ elseif ($section == 'agenda' and $_login):
 	endif;
 elseif ($section == 'box' and $_login):
 	// boxes
-	if (!isset($sbs)):
-		include 'box/box-index.php';
-	elseif ($sbs == 'createoccupation'):
+	if ($sbs == 'createoccupation'):
 		include 'box/create-occupation.php';
 	elseif ($sbs == 'manageoccupation'):
 		include 'box/manage-occupation.php';
@@ -94,9 +78,6 @@ elseif ($section == 'reports' and $_login):
 	// programacion
 	elseif ($sbs == 'viewprogram'):
 		include 'reports/view-program.php';
-	// planificacion
-	elseif ($sbs == 'viewplanif'):
-		include 'reports/view-planification.php';
 	// rendimiento
 	elseif ($sbs == 'viewperform'):
 		include 'reports/view-perform.php';
@@ -109,6 +90,9 @@ elseif ($section == 'reports' and $_login):
 	// reprogramaciones
 	elseif ($sbs == 'viewreprogram'):
 		include 'reports/view-reprogram.php';
+	// reprogramaciones
+	elseif ($sbs == 'viewperc'):
+		include 'reports/view-perc.php';
 	// other
 	else:
 		include 'src/error.php';
@@ -161,22 +145,11 @@ elseif ($section == 'admin' and $_admin):
 	// dashboard
 	if (!isset($sbs)):
 		include 'admin/admin-index.php';
-	// people
-	elseif ($sbs == 'createpeople'):
-		include 'admin/people/create-people.php';
-	elseif ($sbs == 'managepeople'):
-		include 'admin/people/manage-people.php';
-	elseif ($sbs == 'editpeople'):
-		include 'admin/people/edit-people.php';
-	// people
-	elseif ($sbs == 'createcontract'):
-		include 'admin/contracts/create-contract.php';
 	// files
 	elseif ($sbs == 'createfile'):
 		include 'admin/files/create-file.php';
 	elseif ($sbs == 'createfilenm'):
 		include 'admin/files/create-file-nm.php';
-	// other
 	else:
 		include 'src/error.php';
 	endif;

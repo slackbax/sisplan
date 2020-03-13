@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-xs-8">
+	<div class="col-xs-12">
 		<section class="content-header">
 			<div class="callout">
 				<h2><i class="fa fa-check"></i> <small>Bienvenido(a),</small>
@@ -8,34 +8,21 @@
 				<h4>A la plataforma de Programación Médica del Servicio de Salud Concepción.</h4>
 			</div>
 		</section>
-	</div>
 
-	<div class="col-xs-4">
-		<section class="content container-fluid">
-			<div class="box box-info box-solid">
-				<div class="box-header">
-					<i class="fa fa-info-circle"></i>
-					<h3 class="box-title">Últimas actualizaciones</h3>
-
-					<div class="box-tools pull-right">
-						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+		<section class="content">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="info-box bg-aqua">
+						<span class="info-box-icon"><i class="ion ion-ios-people"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-text">Contratos registrados</span>
+							<span class="info-box-number">90</span>
+							<div class="progress">
+								<div class="progress-bar" style="width: 50%"></div>
+							</div>
+							<span class="progress-description">Programados</span>
+						</div>
 					</div>
-				</div>
-
-				<div class="box-body">
-					<p><strong>V2.1</strong></p>
-					<ul>
-						<li>Implementada nueva distribución de actividades según indicaciones del MINSAL para el año 2019. La nueva distribución entrará en vigencia para el primer corte del año en el mes de junio.</li>
-					</ul>
-					<p><strong>V2.0</strong></p>
-					<ul>
-						<li>Nueva presentación y distribución de módulos.</li>
-					</ul>
-					<p><strong>V1.0</strong></p>
-					<ul>
-						<li>Comienzo de marcha blanca.</li>
-						<li>Presentación y habilitación de la plataforma.</li>
-					</ul>
 				</div>
 			</div>
 		</section>
