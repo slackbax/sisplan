@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63421c57-d226-4c4f-bac9-15804f426fbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/list-people.js" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/list-people.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agenda/list-people.php" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/list-people.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/classAgenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classAgenda.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/ajax.getServerProgramPerc.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports/ajax.getServerProgramPerc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/view-perc.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/view-perc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/view-perc.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports/view-perc.php" afterDir="false" />
-    </list>
+    <list default="true" id="63421c57-d226-4c4f-bac9-15804f426fbc" name="Default Changelist" comment="Sesiones + arreglos varios" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +10,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -73,6 +65,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1Pxls5Kepr2OudTXovKjCmf5r7O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -82,7 +75,7 @@
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sisplan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -112,7 +105,7 @@
     </option>
   </component>
   <component name="SvnConfiguration" cleanupOnStartRun="true">
-    <configuration>C:\Users\Ignacio\AppData\Roaming\Subversion</configuration>
+    <configuration>C:\Users\skybax\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="SvnFileUrlMappingImpl">
@@ -619,10 +612,15 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584021594051" />
-    <state x="172" y="49" width="1556" height="982" key="CommitChangelistDialog2" timestamp="1584112483101">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="172" y="47" width="1556" height="982" key="CommitChangelistDialog2" timestamp="1584142087620">
+      <screen x="0" y="0" width="1920" height="1027" />
     </state>
+    <state x="172" y="47" key="CommitChangelistDialog2/0.0.1920.1027@0.0.1920.1027" timestamp="1584142087620" />
     <state x="172" y="49" width="1556" height="982" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584112483101" />
+    <state x="723" y="424" key="ComposerInitDialogKey" timestamp="1584141880950">
+      <screen x="0" y="0" width="1920" height="1027" />
+    </state>
+    <state x="723" y="424" key="ComposerInitDialogKey/0.0.1920.1027@0.0.1920.1027" timestamp="1584141880950" />
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1581693515800">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
