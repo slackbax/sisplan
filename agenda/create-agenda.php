@@ -80,7 +80,7 @@ endforeach;
 										<div class="row">
 											<div class="form-group col-xs-7">
 												<label class="control-label">Nombre</label>
-												<p class="form-control-static"><?php echo $per->per_nombres . ' ' . $per->per_ap . ' ' . $per->per_am ?></p>
+												<p class="form-control-static"><?php echo $per->per_nombres ?></p>
 												<input type="hidden" id="iNyear" value="<?php echo $year ?>">
 												<input type="hidden" id="iNperiod" value="<?php echo $period ?>">
 												<input type="hidden" id="iNservice" value="<?php echo $serv ?>">

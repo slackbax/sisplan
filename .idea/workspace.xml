@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63421c57-d226-4c4f-bac9-15804f426fbc" name="Default Changelist" comment="Sesiones + arreglos varios" />
+    <list default="true" id="4dd5169e-4fb4-4a42-8c96-ba4fa120f7fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e37b066a-466e-4aa4-81bf-3b4bac9898f4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e37b066a-466e-4aa4-81bf-3b4bac9898f4/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sisplan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sisplan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agenda/ajax.insertAbsence.php" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/ajax.insertAbsence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agenda/create-agenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/agenda/create-agenda.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/classActividad.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classActividad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/classActividadProgramable.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classActividadProgramable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/classAgenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classAgenda.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/classBloqueHora.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classBloqueHora.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/classBox.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classBox.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/classBoxCaracteristica.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classBoxCaracteristica.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/classDistHorasProg.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/classDistHorasProg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/create-program.php" beforeDir="false" afterPath="$PROJECT_DIR$/program/create-program.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,41 +35,8 @@
       <executable path="composer" />
     </execution>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="sisplan" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="sisplan" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
-    <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBowerSettings">
-    <node-interpreter value="project" />
-    <bower-package value="$USER_HOME$/AppData/Roaming/npm/node_modules/bower" />
-    <bower.json value="$PROJECT_DIR$/bower.json" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -62,612 +51,81 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1Pxls5Kepr2OudTXovKjCmf5r7O" />
+  <component name="ProjectId" id="1cmJE6Fba7WsmACGZfvYmxgZGNY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
+    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\sisplan_template" />
-    </key>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
-  <component name="SvnConfiguration" cleanupOnStartRun="true">
-    <configuration>C:\Users\skybax\AppData\Roaming\Subversion</configuration>
-    <supportedVersion>125</supportedVersion>
-  </component>
-  <component name="SvnFileUrlMappingImpl">
-    <option name="myMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\xampp\htdocs\sisplan_template" />
-          <option name="myCopyRoot" value="C:\xampp\htdocs\sisplan_template" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
-    <option name="myMoreRealMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\xampp\htdocs\sisplan_template" />
-          <option name="myCopyRoot" value="C:\xampp\htdocs\sisplan_template" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63421c57-d226-4c4f-bac9-15804f426fbc" name="Default Changelist" comment="" />
-      <created>1549026839552</created>
+      <changelist id="4dd5169e-4fb4-4a42-8c96-ba4fa120f7fe" name="Default Changelist" comment="" />
+      <created>1591127720753</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1549026839552</updated>
-      <workItem from="1549026842280" duration="1135000" />
-      <workItem from="1549028017345" duration="3948000" />
-      <workItem from="1549279409517" duration="2313000" />
-      <workItem from="1549371298457" duration="14006000" />
-      <workItem from="1549451435672" duration="601000" />
-      <workItem from="1549466417768" duration="2173000" />
-      <workItem from="1551270317954" duration="625000" />
-      <workItem from="1551364377528" duration="2345000" />
-      <workItem from="1551809486142" duration="750000" />
-      <workItem from="1552911621153" duration="50007000" />
-      <workItem from="1553515704856" duration="51552000" />
-      <workItem from="1554120916050" duration="69781000" />
-      <workItem from="1554729016254" duration="23468000" />
-      <workItem from="1554898848928" duration="888000" />
-      <workItem from="1555012804671" duration="2775000" />
-      <workItem from="1555333288940" duration="21000" />
-      <workItem from="1555333323536" duration="10101000" />
-      <workItem from="1555592818182" duration="634000" />
-      <workItem from="1555946993100" duration="5706000" />
-      <workItem from="1556649990032" duration="78000" />
-      <workItem from="1556808595246" duration="6349000" />
-      <workItem from="1556888319255" duration="4521000" />
-      <workItem from="1557232907990" duration="1400000" />
-      <workItem from="1557255871946" duration="2714000" />
-      <workItem from="1557410194151" duration="666000" />
-      <workItem from="1557928530884" duration="4252000" />
-      <workItem from="1557946250958" duration="14353000" />
-      <workItem from="1558095633892" duration="17606000" />
-      <workItem from="1558354769220" duration="23203000" />
-      <workItem from="1558711656382" duration="8323000" />
-      <workItem from="1558963117358" duration="7236000" />
-      <workItem from="1559221030331" duration="5180000" />
-      <workItem from="1559232349503" duration="8583000" />
-      <workItem from="1559572969634" duration="44464000" />
-      <workItem from="1560169065494" duration="14235000" />
-      <workItem from="1560350873473" duration="9457000" />
-      <workItem from="1560428364230" duration="14938000" />
-      <workItem from="1560774050166" duration="3804000" />
-      <workItem from="1560787304673" duration="2097000" />
-      <workItem from="1560805513307" duration="667000" />
-      <workItem from="1560892038713" duration="2156000" />
-      <workItem from="1560953827011" duration="34000" />
-      <workItem from="1560962114913" duration="3958000" />
-      <workItem from="1561033286019" duration="602000" />
-      <workItem from="1561048883491" duration="594000" />
-      <workItem from="1561134475839" duration="2113000" />
-      <workItem from="1561552286364" duration="10163000" />
-      <workItem from="1561641511476" duration="534000" />
-      <workItem from="1561652328015" duration="1202000" />
-      <workItem from="1561732746949" duration="8248000" />
-      <workItem from="1561984256027" duration="20000" />
-      <workItem from="1561986792827" duration="740000" />
-      <workItem from="1562685629186" duration="1202000" />
-      <workItem from="1562943010604" duration="1164000" />
-      <workItem from="1563456179754" duration="1310000" />
-      <workItem from="1563894575896" duration="2345000" />
-      <workItem from="1564678241435" duration="2199000" />
-      <workItem from="1565007872620" duration="2577000" />
-      <workItem from="1566823837224" duration="59000" />
-      <workItem from="1567024570883" duration="498000" />
-      <workItem from="1569327852683" duration="1418000" />
-      <workItem from="1573736294546" duration="1232000" />
-      <workItem from="1573834223332" duration="87000" />
-      <workItem from="1574081354418" duration="17000" />
-      <workItem from="1574250103384" duration="29000" />
-      <workItem from="1574686740582" duration="1197000" />
-      <workItem from="1578317154268" duration="28000" />
-      <workItem from="1579616411840" duration="35057000" />
-      <workItem from="1579887545410" duration="5000" />
-      <workItem from="1579887621616" duration="2895000" />
-      <workItem from="1580124866989" duration="9641000" />
-      <workItem from="1580223161793" duration="4343000" />
-      <workItem from="1580305965634" duration="19791000" />
-      <workItem from="1580472540983" duration="9652000" />
-      <workItem from="1580483723070" duration="8682000" />
-      <workItem from="1580732082399" duration="778000" />
-      <workItem from="1580752738988" duration="48042000" />
-      <workItem from="1581334225219" duration="23369000" />
-      <workItem from="1581608914943" duration="68000" />
-      <workItem from="1581692725358" duration="791000" />
-      <workItem from="1581695788133" duration="7000" />
-      <workItem from="1581702185362" duration="1336000" />
-      <workItem from="1581937686082" duration="90000" />
-      <workItem from="1581937905799" duration="1285000" />
-      <workItem from="1581951656666" duration="750000" />
-      <workItem from="1584015736409" duration="9877000" />
-      <workItem from="1584098356941" duration="3719000" />
-      <workItem from="1584111914865" duration="573000" />
+      <updated>1591127720753</updated>
+      <workItem from="1591127721913" duration="1468000" />
+      <workItem from="1591191048630" duration="15000" />
+      <workItem from="1592829604434" duration="182000" />
+      <workItem from="1592829840675" duration="348000" />
+      <workItem from="1602893675906" duration="757000" />
+      <workItem from="1602894443341" duration="1760000" />
+      <workItem from="1603045528879" duration="421000" />
+      <workItem from="1604265696756" duration="2141000" />
+      <workItem from="1604497112953" duration="12000" />
+      <workItem from="1605791581741" duration="686000" />
+      <workItem from="1606163812163" duration="7000" />
+      <workItem from="1611660189256" duration="4813000" />
+      <workItem from="1611784207218" duration="6000" />
     </task>
-    <task id="LOCAL-00002" summary="update">
-      <created>1549030580422</created>
+    <task id="LOCAL-00001" summary="Update libraries">
+      <created>1591127891315</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591127891315</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Delete garbage">
+      <created>1591127965827</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1549030580422</updated>
+      <updated>1591127965827</updated>
     </task>
-    <task id="LOCAL-00003" summary="update">
-      <created>1549033275673</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1549033275673</updated>
-    </task>
-    <task id="LOCAL-00004" summary="correccion en ingreso de agenda y bloques">
-      <created>1549284539487</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1549284539487</updated>
-    </task>
-    <task id="LOCAL-00005" summary="modificacion en ingreso de topes horarios&#10;verificacion de actividades multiprofesional">
-      <created>1549467650520</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1549467650520</updated>
-    </task>
-    <task id="LOCAL-00006" summary="color de actividad multiprofesional">
-      <created>1549467752736</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1549467752736</updated>
-    </task>
-    <task id="LOCAL-00007" summary="correcciones varias">
-      <created>1553083484406</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1553083484406</updated>
-    </task>
-    <task id="LOCAL-00008" summary="correcciones finales">
-      <created>1553097596864</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1553097596864</updated>
-    </task>
-    <task id="LOCAL-00009" summary="modificacion de actividades año 2019">
-      <created>1553867036364</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1553867036364</updated>
-    </task>
-    <task id="LOCAL-00010" summary="reportes para nueva distribucion 2019">
-      <created>1554742088871</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1554742088871</updated>
-    </task>
-    <task id="LOCAL-00011" summary="news">
-      <created>1554749753460</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1554749753460</updated>
-    </task>
-    <task id="LOCAL-00012" summary="correcciones">
-      <created>1554751185353</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1554751185353</updated>
-    </task>
-    <task id="LOCAL-00013" summary="carga de produccion">
-      <created>1554823090820</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1554823090820</updated>
-    </task>
-    <task id="LOCAL-00014" summary="agregado comite a actividades programables">
-      <created>1554823957799</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1554823957799</updated>
-    </task>
-    <task id="LOCAL-00015" summary="correcciones a crear/editar programacion">
-      <created>1555948959354</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1555948959354</updated>
-    </task>
-    <task id="LOCAL-00016" summary="correcciones a busqueda de procedimientos">
-      <created>1557239032363</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1557239032363</updated>
-    </task>
-    <task id="LOCAL-00017" summary="correccion a reporte excel">
-      <created>1557256689076</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1557256689076</updated>
-    </task>
-    <task id="LOCAL-00018" summary="pabellon hemodinamia agregado como actividad">
-      <created>1559311853701</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1559311853701</updated>
-    </task>
-    <task id="LOCAL-00019" summary="creacion de programacion radiologia">
-      <created>1560261109731</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1560261109731</updated>
-    </task>
-    <task id="LOCAL-00020" summary="creacion de programacion rehabilitacion">
-      <created>1560537980552</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1560537980552</updated>
-    </task>
-    <task id="LOCAL-00021" summary="edicion de programacion con imageno/rehab">
-      <created>1560778429876</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1560778429876</updated>
-    </task>
-    <task id="LOCAL-00022" summary="correccion de bugs">
-      <created>1560787688640</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1560787688640</updated>
-    </task>
-    <task id="LOCAL-00023" summary="ups">
-      <created>1560787810240</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1560787810240</updated>
-    </task>
-    <task id="LOCAL-00024" summary="correccion a guardado de horas">
-      <created>1561552329848</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1561552329848</updated>
-    </task>
-    <task id="LOCAL-00025" summary="edicion de usuarios&#10;reporte de sms enviados">
-      <created>1561559753573</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1561559753573</updated>
-    </task>
-    <task id="LOCAL-00026" summary="reporte de sms recibidos">
-      <created>1561641946860</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1561641946860</updated>
-    </task>
-    <task id="LOCAL-00027" summary="correccion en reporte de sms recibidos">
-      <created>1561987015196</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1561987015196</updated>
-    </task>
-    <task id="LOCAL-00028" summary="recuperacion de contraseñas&#10;envio de correos">
-      <created>1563906652429</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1563906652429</updated>
-    </task>
-    <task id="LOCAL-00029" summary="recuperacion de contraseñas&#10;envio de correos">
-      <created>1564748444289</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1564748444289</updated>
-    </task>
-    <task id="LOCAL-00030" summary="eliminado gastroenterologia infantil">
-      <created>1565008437017</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1565008437017</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Creacion/edicion de programaciones">
-      <created>1579789065600</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1579789065600</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Creacion de persona/contrato">
-      <created>1579807056627</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1579807056627</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Modificacion de persona">
-      <created>1579809317467</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1579809317467</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Descanso complementario">
-      <created>1579895801316</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1579895801316</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Reajuste de horas contratadas">
-      <created>1580234029147</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1580234029147</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Bug en nuevo personal">
-      <created>1580296065258</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1580296065258</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Act no policlinico en clase AP + edicion de persona incluyendo especialidad SIS">
-      <created>1580326641337</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1580326641337</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Medico general">
-      <created>1580388414890</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1580388414890</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Reporte de justificados">
-      <created>1580469533034</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1580469533034</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Reporte de programaciones ingresadas">
-      <created>1580483654772</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1580483654772</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Programaciones ingresadas / justificadas">
-      <created>1580760791546</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1580760791546</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Reporte de programacion por plantas">
-      <created>1580904432185</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1580904432185</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Filtro de ultima programacion ingresada">
-      <created>1581020195957</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1581020195957</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Filtro de ultima programacion ingresada">
-      <created>1581020290736</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1581020290736</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Sesiones + arreglos varios">
-      <created>1581424313996</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1581424313996</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Sesion control por ajax">
-      <created>1581424944549</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1581424944549</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Eliminacion de campos en Persona + reporte de contratos">
-      <created>1581608979421</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1581608979421</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Update">
-      <created>1584016596299</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1584016596299</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Reporte PERC">
-      <created>1584038359865</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1584038359865</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Ajustes a reporte PERC + 1er reacondicionamiento de agenta">
-      <created>1584112485888</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1584112485888</updated>
-    </task>
-    <option name="localTasksCounter" value="51" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correccion a guardado de horas" />
-    <MESSAGE value="edicion de usuarios&#10;reporte de sms enviados" />
-    <MESSAGE value="reporte de sms recibidos" />
-    <MESSAGE value="correccion en reporte de sms recibidos" />
-    <MESSAGE value="recuperacion de contraseñas&#10;envio de correos" />
-    <MESSAGE value="eliminado gastroenterologia infantil" />
-    <MESSAGE value="Creacion/edicion de programaciones" />
-    <MESSAGE value="Creacion de persona/contrato" />
-    <MESSAGE value="Modificacion de persona" />
-    <MESSAGE value="Descanso complementario" />
-    <MESSAGE value="Reajuste de horas contratadas" />
-    <MESSAGE value="Bug en nuevo personal" />
-    <MESSAGE value="Act no policlinico en clase AP + edicion de persona incluyendo especialidad SIS" />
-    <MESSAGE value="Medico general" />
-    <MESSAGE value="Reporte de justificados" />
-    <MESSAGE value="Reporte de programaciones ingresadas" />
-    <MESSAGE value="Programaciones ingresadas / justificadas" />
-    <MESSAGE value="Reporte de programacion por plantas" />
-    <MESSAGE value="Filtro de ultima programacion ingresada" />
-    <MESSAGE value="Sesiones + arreglos varios" />
-    <MESSAGE value="Sesion control por ajax" />
-    <MESSAGE value="Eliminacion de campos en Persona + reporte de contratos" />
-    <MESSAGE value="Update" />
-    <MESSAGE value="Reporte PERC" />
-    <MESSAGE value="Ajustes a reporte PERC + 1er reacondicionamiento de agenta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustes a reporte PERC + 1er reacondicionamiento de agenta" />
+    <MESSAGE value="Update libraries" />
+    <MESSAGE value="Delete garbage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete garbage" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580485006274">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="552" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580485006274" />
-    <state x="640" y="277" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580472458426">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="640" y="277" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580472458426" />
-    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584021594051">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584021594051" />
-    <state x="172" y="47" width="1556" height="982" key="CommitChangelistDialog2" timestamp="1584142087620">
-      <screen x="0" y="0" width="1920" height="1027" />
-    </state>
-    <state x="172" y="47" key="CommitChangelistDialog2/0.0.1920.1027@0.0.1920.1027" timestamp="1584142087620" />
-    <state x="172" y="49" width="1556" height="982" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584112483101" />
-    <state x="723" y="424" key="ComposerInitDialogKey" timestamp="1584141880950">
-      <screen x="0" y="0" width="1920" height="1027" />
-    </state>
-    <state x="723" y="424" key="ComposerInitDialogKey/0.0.1920.1027@0.0.1920.1027" timestamp="1584141880950" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1581693515800">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581693515800" />
-    <state width="281" height="539" key="HiddenNamespacesPopup" timestamp="1580485009483">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="281" height="539" key="HiddenNamespacesPopup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580485009483" />
-    <state x="737" y="340" key="NewPhpClassDialog" timestamp="1579633442338">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="737" y="340" key="NewPhpClassDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1579633442338" />
-    <state x="777" y="460" key="NewPhpFileDialog" timestamp="1584021550231">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="777" y="460" key="NewPhpFileDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584021550231" />
-    <state x="461" y="183" key="SettingsEditor" timestamp="1580485229724">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="461" y="183" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580485229724" />
-    <state width="200" height="523" key="SqlResolveConfigurable" timestamp="1580484593066">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="200" height="523" key="SqlResolveConfigurable/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580484593066" />
-    <state x="814" y="428" width="332" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1580483813656">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="814" y="428" width="332" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580483813656" />
-    <state x="676" y="261" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1580483573435">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="676" y="261" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580483573435" />
-    <state x="631" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1584098356739">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="631" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584098356739" />
-    <state x="776" y="379" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581424583016">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="776" y="379" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581424583016" />
-    <state x="449" y="112" width="1008" height="793" key="find.popup" timestamp="1581595248845">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="449" y="112" width="1008" height="793" key="find.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1581595248845" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580842944417">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1580842944417" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

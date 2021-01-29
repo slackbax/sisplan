@@ -268,7 +268,7 @@ class DistHorasProg {
                                     WHERE d.disp_id = ?
                                     AND (acp_id = 5 OR acp_id = 6 OR acp_id = 7)");
 
-		$stmt->bind_param("i", $db->clearText($disp));
+        $stmt->bind_param("i", $disp);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$row = $result->fetch_assoc();
@@ -333,8 +333,6 @@ class DistHorasProg {
 				throw new Exception("La inserción de la distribución de horas falló en su preparación.");
 			endif;
 
-			$dist = $db->clearText($dist);
-			$thor = $db->clearText($thor);
 			$cant = $db->clearText($cant);
 			$rend = $db->clearText($rend);
 			$obs = utf8_decode($db->clearText($obs));

@@ -49,7 +49,7 @@ class Box {
 			$db = new myDBC();
 		endif;
 
-		$stmt = $db->Prepare("SELECT b.box_id FROM prm_box b ORDER BY b.box_descripcion ASC");
+		$stmt = $db->Prepare("SELECT b.box_id FROM prm_box b ORDER BY b.box_descripcion");
 
 		$stmt->execute();
 		$result = $stmt->get_result();
@@ -74,7 +74,7 @@ class Box {
 			$db = new myDBC();
 		endif;
 
-		$stmt = $db->Prepare("SELECT WEEKDAY(bh.bh_fecha) AS dia, bh.*, bx.*, pr.*, per.per_rut, per.per_nombres, per.per_ap, per.per_am, bc.*, pel.* 
+		$stmt = $db->Prepare("SELECT WEEKDAY(bh.bh_fecha) AS dia, bh.*, bx.*, pr.*, per.per_rut, per.per_nombres, bc.*, pel.* 
 									FROM prm_bloque_hora bh
 									JOIN prm_box bx ON bh.box_id = bx.box_id
 									JOIN prm_persona per ON bh.per_id = per.per_id
@@ -83,8 +83,8 @@ class Box {
 									LEFT JOIN prm_box_caracteristica bc ON bx.box_id = bc.box_id 
 									AND bh.bles_id = 1
 									WHERE bh.box_id = ? and bh.bh_fecha = ? 
-									GROUP BY bh.bh_id
-									ORDER BY bh.bh_fecha,bh.bh_hora_ini ASC");
+									GROUP BY bh.bh_id, bh.bh_fecha, bh.bh_hora_ini
+									ORDER BY bh.bh_fecha, bh.bh_hora_ini");
 
 		$stmt->bind_param("is", $box, $fecha);
 		$stmt->execute();
@@ -115,7 +115,7 @@ class Box {
 			$db = new myDBC();
 		endif;
 
-		$stmt = $db->Prepare("SELECT WEEKDAY(bh.bh_fecha) AS dia, bh.*, bx.*, pr.*, per.per_rut, per.per_nombres, per.per_ap, per.per_am, bc.* 
+		$stmt = $db->Prepare("SELECT WEEKDAY(bh.bh_fecha) AS dia, bh.*, bx.*, pr.*, per.per_rut, per.per_nombres, bc.* 
 									FROM prm_bloque_hora bh
 									JOIN prm_box bx ON bh.box_id = bx.box_id
 									JOIN prm_persona per ON bh.per_id = per.per_id
@@ -123,8 +123,8 @@ class Box {
 									LEFT JOIN prm_box_caracteristica bc ON bx.box_id = bc.box_id 
 									AND bh.bles_id = 1
 									WHERE bh.box_id = ? and bh.bh_fecha  BETWEEN ? AND ?
-									GROUP BY bh.bh_id
-									ORDER BY bh.bh_fecha,bh.bh_hora_ini ASC");
+									GROUP BY bh.bh_id, bh.bh_fecha, bh.bh_hora_ini
+									ORDER BY bh.bh_fecha, bh.bh_hora_ini");
 
 		$stmt->bind_param("iss", $box, $fechai, $fechat);
 		$stmt->execute();
@@ -140,7 +140,7 @@ class Box {
 		$obj->rango_hora = $row['bh_hora_ini'] . " a " . $row['bh_hora_ter'];;
 		$obj->box_numero = $row['box_numero'];
 		$obj->prof_nombre = $row['prof_nombre'];
-		$obj->per_nombres = $row['per_nombres'] . " " . $row['per_ap'] . " " . $row['per_am'];
+		$obj->per_nombres = $row['per_nombres'];
 
 		unset($db);
 		return $obj;

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="sisplan" uuid="e37b066a-466e-4aa4-81bf-3b4bac9898f4">
-      <database-info product="MariaDB" version="5.5.64-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.4.1" dbms="MARIADB" exact-version="5.5.64" exact-driver-version="2.4">
+    <data-source name="sisplan@localhost" uuid="a9d0fe8c-f6a2-4a46-a188-73571f8aa4bb">
+      <database-info product="MariaDB" version="10.5.7-MariaDB-log" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.6.0" dbms="MARIADB" exact-version="10.5.7" exact-driver-version="2.6">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
       <schema-mapping>

@@ -67,7 +67,8 @@ class Actividad {
 
 		$stmt = $db->Prepare("SELECT * FROM prm_actividad WHERE act_nombre = ?");
 
-		$stmt->bind_param("s", utf8_decode($db->clearText($name)));
+        $name = utf8_decode($db->clearText($name));
+        $stmt->bind_param("s", $name);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$row = $result->fetch_assoc();
@@ -93,7 +94,7 @@ class Actividad {
 
 		$stmt = $db->Prepare("SELECT act_id FROM prm_actividad_subesp WHERE ssub_id = ?");
 
-		$stmt->bind_param("i", $db->clearText($id));
+		$stmt->bind_param("i", $id);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$lista = [];
@@ -116,18 +117,17 @@ class Actividad {
         if (is_null($db)):
             $db = new myDBC();
         endif;
-        
-        $r = $db->runQuery('INSERT INTO prm_actividad (act_nombre, act_comite) VALUES ("' . utf8_decode($name) . '", ' . $comite . ')');
+
+        $name = utf8_decode($name);
+        $r = $db->runQuery('INSERT INTO prm_actividad (act_nombre, act_comite) VALUES ("' . $name . '", ' . $comite . ')');
 
         if ($r):
             $res = $db->runQuery('SELECT MAX(act_id) AS act_id FROM prm_actividad');
             $row = $res->fetch_assoc();
-            
-            $result = array('estado' => true, 'msg' => $row['act_id']);
-            return $result;
+
+            return array('estado' => true, 'msg' => $row['act_id']);
         else:
-            $result = array('estado' => false, 'msg' => 'false');
-            return $result;
+            return array('estado' => false, 'msg' => 'false');
         endif;
     }
 }

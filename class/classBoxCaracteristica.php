@@ -47,7 +47,7 @@ class BoxCaracteristica {
 
 		$stmt = $db->Prepare("SELECT bc.bca_id 
 									FROM prm_box_caracteristica bc 
-									ORDER BY bc.bca_descripcion ASC");
+									ORDER BY bc.bca_descripcion");
 
 		$stmt->execute();
 		$result = $stmt->get_result();

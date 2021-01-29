@@ -28,7 +28,7 @@ class BloqueHora {
 									LEFT JOIN prm_tipo_box ptb on bot.tbox_id = ptb.tbox_id
                                     WHERE bh.bh_id = ?");
 
-		$stmt->bind_param("i", $db->clearText($id));
+		$stmt->bind_param("i", $id);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$obj = new stdClass();
@@ -100,7 +100,7 @@ class BloqueHora {
 			$db = new myDBC();
 		endif;
 
-		$stmt = $db->Prepare("SELECT bh.bh_id FROM prm_bloque_hora bh ORDER BY bh.bh_descripcion ASC");
+		$stmt = $db->Prepare("SELECT bh.bh_id FROM prm_bloque_hora bh ORDER BY bh.bh_descripcion");
 
 		$stmt->execute();
 		$result = $stmt->get_result();
@@ -114,12 +114,13 @@ class BloqueHora {
 		return $lista;
 	}
 
-	/**
-	 * @param $f_ini
-	 * @param $f_ter
-	 * @param $db
-	 * @return array
-	 */
+    /**
+     * @param $f_ini
+     * @param $f_ter
+     * @param $per
+     * @param null $db
+     * @return array
+     */
 	public function getByDate($f_ini, $f_ter, $per, $db = null) {
 		if (is_null($db)):
 			$db = new myDBC();
@@ -130,7 +131,10 @@ class BloqueHora {
 									WHERE bh_fecha BETWEEN ? AND ? 
 									AND per_id = ?");
 
-		$stmt->bind_param("ssi", $db->clearText($f_ini), $db->clearText($f_ter), $db->clearText($per));
+        $f_ini = $db->clearText($f_ini);
+        $f_ter = $db->clearText($f_ter);
+        $per = $db->clearText($per);
+        $stmt->bind_param("ssi", $f_ini, $f_ter, $per);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$lista = [];
@@ -158,10 +162,13 @@ class BloqueHora {
 		$stmt = $db->Prepare("SELECT bh_id 
 									FROM prm_bloque_hora
 									WHERE bh_fecha BETWEEN ? AND ? 
-									AND mau_id IS NOT AND bdes_id IS NOT NULL
+									AND mau_id IS NOT NULL AND bdes_id IS NOT NULL
 									AND per_id = ?");
 
-		$stmt->bind_param("ssi", $db->clearText($f_ini), $db->clearText($f_ter), $db->clearText($per));
+        $f_ini = $db->clearText($f_ini);
+        $f_ter = $db->clearText($f_ter);
+        $per = $db->clearText($per);
+        $stmt->bind_param("ssi", $f_ini, $f_ter, $per);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$lista = [];
@@ -230,8 +237,9 @@ class BloqueHora {
 		$stmt = $db->Prepare("SELECT MIN(bh_id) AS begin, MAX(bh_id) AS end
 									FROM prm_bloque_hora bh
 									JOIN prm_persona p ON bh.per_id = p.per_id
+								    JOIN prm_persona_establecimiento ppe on p.per_id = ppe.per_id
 									JOIN prm_profesion pr ON p.prof_id = pr.prof_id
-                                    JOIN prm_distribucion_prog d on p.per_id = d.per_id
+                                    JOIN prm_distribucion_prog d on ppe.pes_id = d.pes_id
                                     JOIN prm_servicio s ON d.ser_id = s.ser_id
 									JOIN prm_box pb on bh.box_id = pb.box_id
 									JOIN prm_estab_lugar pel on pb.lug_id = pel.lug_id
@@ -241,7 +249,8 @@ class BloqueHora {
 									AND bh_ultima IS TRUE
 									GROUP BY bh.per_id, bh_bloqid, bh_programado");
 
-		$stmt->bind_param("s", $db->clearText($year));
+        $year = $db->clearText($year);
+        $stmt->bind_param("s", $year);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$lista = [];
@@ -277,7 +286,10 @@ class BloqueHora {
 									JOIN prm_estab_lugar pel on pb.lug_id = pel.lug_id
                                     WHERE bh.per_id = ? AND pel.est_id = ? AND YEAR(bh.bh_fecha) = ? AND bh_ultima IS TRUE AND mau_id = 13");
 
-		$stmt->bind_param("iis", $db->clearText($per), $db->clearText($est), $db->clearText($fecha));
+        $per = $db->clearText($per);
+        $est = $db->clearText($est);
+        $fecha = $db->clearText($fecha);
+        $stmt->bind_param("iis", $per, $est, $fecha);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$obj = new stdClass();
@@ -292,7 +304,8 @@ class BloqueHora {
 									JOIN prm_estab_lugar pel on pb.lug_id = pel.lug_id
                                     WHERE bh.per_id = ? AND pel.est_id = ? AND YEAR(bh.bh_fecha) = ? AND bh_ultima IS TRUE AND mau_id = 17");
 
-		$stmt->bind_param("iis", $db->clearText($per), $db->clearText($est), $db->clearText($fecha));
+        $fecha = $db->clearText($fecha);
+		$stmt->bind_param("iis", $per, $est, $fecha);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
@@ -306,7 +319,8 @@ class BloqueHora {
 									JOIN prm_estab_lugar pel on pb.lug_id = pel.lug_id
                                     WHERE bh.per_id = ? AND pel.est_id = ? AND YEAR(bh.bh_fecha) = ? AND bh_ultima IS TRUE AND mau_id = 18");
 
-		$stmt->bind_param("iis", $db->clearText($per), $db->clearText($est), $db->clearText($fecha));
+        $fecha = $db->clearText($fecha);
+		$stmt->bind_param("iis", $per, $est, $fecha);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
@@ -335,12 +349,15 @@ class BloqueHora {
 									JOIN prm_estab_lugar pel on pb.lug_id = pel.lug_id
 									WHERE bh_programado IS TRUE
 									AND bh_ultima IS TRUE
-									AND mau_id IS NOT AND bdes_id IS NOT 
+									AND mau_id IS NOT NULL AND bdes_id IS NOT NULL 
 									AND per_id = ? AND est_id = ? and YEAR(bh_fecha) = ?
 									GROUP BY bh_bloqid
-									ORDER BY begin ASC");
+									ORDER BY begin");
 
-		$stmt->bind_param("iis", $db->clearText($per), $db->clearText($est), $db->clearText($year));
+        $per = $db->clearText($per);
+        $est = $db->clearText($est);
+        $year = $db->clearText($year);
+        $stmt->bind_param("iis", $per, $est, $year);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$lista = [];
@@ -379,36 +396,40 @@ class BloqueHora {
 									AND (? BETWEEN age_hora_ini AND age_hora_ter OR ? BETWEEN age_hora_ini AND age_hora_ter)
 									AND age_ultima IS TRUE");
 
-		$stmt->bind_param("siiss", $db->clearText($period), $db->clearText($dia), $db->clearText($box), $db->clearText($h_ini), $db->clearText($h_ter));
+        $period = $db->clearText($period);
+        $dia = $db->clearText($dia);
+        $box = $db->clearText($box);
+        $h_ini = $db->clearText($h_ini);
+        $h_ter = $db->clearText($h_ter);
+        $stmt->bind_param("siiss", $period, $dia, $box, $h_ini, $h_ter);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$row = $result->fetch_assoc();
 
-		$filled = ($row['num'] > 0) ? true : false;
+		$filled = $row['num'] > 0;
 
 		unset($db);
 		return $filled;
 	}
 
-	/**
-	 * @param $per
-	 * @param $us
-	 * @param $act
-	 * @param $subesp
-	 * @param $box
-	 * @param $motivo
-	 * @param $destino
-	 * @param $fecha
-	 * @param $hinicio
-	 * @param $htermino
-	 * @param $cupos
-	 * @param $c_obs
-	 * @param $descripcion
-	 * @param $programado
-	 * @param $uniq_id
-	 * @param $db
-	 * @return array
-	 */
+    /**
+     * @param $per
+     * @param $us
+     * @param $act
+     * @param $subesp
+     * @param $box
+     * @param $motivo
+     * @param $destino
+     * @param $fecha
+     * @param $hinicio
+     * @param $htermino
+     * @param $c_obs
+     * @param $descripcion
+     * @param $programado
+     * @param $uniq_id
+     * @param null $db
+     * @return array
+     */
 	public function set($per, $us, $act, $subesp, $box, $motivo, $destino, $fecha, $hinicio, $htermino, $c_obs, $descripcion, $programado, $uniq_id, $db = null) {
 		if (is_null($db)):
 			$db = new myDBC();
@@ -459,7 +480,10 @@ class BloqueHora {
 				throw new Exception("La inserción de los cupos de agenda falló en su preparación.");
 			endif;
 
-			$bind = $stmt->bind_param("iid", $db->clearText($id), $db->clearText($tipo), $db->clearText($numero));
+            $id = $db->clearText($id);
+            $tipo = $db->clearText($tipo);
+            $numero = $db->clearText($numero);
+            $bind = $stmt->bind_param("iid", $id, $tipo, $numero);
 			if (!$bind):
 				throw new Exception("La inserción de los cupos de agenda falló en su binding.");
 			endif;
@@ -494,7 +518,8 @@ class BloqueHora {
 				throw new Exception("La actualización de los bloqueos falló en su preparación.");
 			endif;
 
-			$bind = $stmt->bind_param("i", $db->clearText($per));
+            $per = $db->clearText($per);
+            $bind = $stmt->bind_param("i", $per);
 			if (!$bind):
 				throw new Exception("La actualización de los bloqueos falló en su binding.");
 			endif;

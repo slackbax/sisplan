@@ -346,21 +346,23 @@ class Agenda {
 		$scr = ($cr != '') ? "AND s.cr_id = $cr" : '';
 		$sserv = ($serv != '') ? "AND d.ser_id = $serv" : '';
 
-		$stmt = $db->Prepare("SELECT p.per_id, p.per_rut, p.per_nombres, p.per_ap, p.per_am, pr.prof_id, pr.prof_nombre
+		$stmt = $db->Prepare("SELECT p.per_id, p.per_rut, p.per_nombres, pr.prof_id, pr.prof_nombre
                                     FROM prm_agenda a
                                     JOIN prm_persona p ON a.per_id = p.per_id
+                                    JOIN prm_persona_establecimiento ppe on p.per_id = ppe.per_id
                                     JOIN prm_profesion pr ON p.prof_id = pr.prof_id
-                                    JOIN prm_distribucion_prog d on p.per_id = d.per_id
+                                    JOIN prm_distribucion_prog d on ppe.pes_id = d.pes_id
                                     JOIN prm_servicio s ON d.ser_id = s.ser_id
                                     JOIN prm_box b ON a.box_id = b.box_id
                                     JOIN prm_estab_lugar pel on b.lug_id = pel.lug_id
                                     WHERE YEAR(age_periodo) = ? AND MONTH(age_periodo) = $period
                                     $estab $cond $scr $sserv
                                     AND age_ultima = TRUE
-                                    GROUP BY p.per_id
-                                    ORDER BY p.per_ap ASC, p.per_am ASC, p.per_nombres ASC");
+                                    GROUP BY p.per_id, p.per_nombres
+                                    ORDER BY p.per_nombres");
 
-		$stmt->bind_param("s", $db->clearText($year));
+        $year = $db->clearText($year);
+        $stmt->bind_param("s", $year);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$lista = [];
@@ -418,11 +420,12 @@ class Agenda {
 
 		$per_date = $year . '-' . $periodo . '-00';
 
-		$stmt = $db->Prepare("SELECT p.per_id, p.per_rut, p.per_nombres, p.per_ap, p.per_am, pr.prof_id, pr.prof_nombre
+		$stmt = $db->Prepare("SELECT p.per_id, p.per_rut, p.per_nombres, pr.prof_id, pr.prof_nombre
                                     FROM prm_agenda a
                                     JOIN prm_persona p ON a.per_id = p.per_id
+                                    JOIN prm_persona_establecimiento ppe on p.per_id = ppe.per_id
                                     JOIN prm_profesion pr ON p.prof_id = pr.prof_id
-                                    JOIN prm_distribucion_prog d on p.per_id = d.per_id
+                                    JOIN prm_distribucion_prog d on ppe.pes_id = d.pes_id
                                     JOIN prm_servicio s ON d.ser_id = s.ser_id
                                     JOIN prm_box b ON a.box_id = b.box_id
                                     JOIN prm_estab_lugar pel on b.lug_id = pel.lug_id
@@ -430,9 +433,11 @@ class Agenda {
                                     $estab $cond
                                     AND age_ultima = TRUE
                                     GROUP BY p.per_id
-                                    ORDER BY p.per_ap ASC, p.per_am ASC, p.per_nombres ASC");
+                                    ORDER BY p.per_nombres ASC");
 
-		$stmt->bind_param("si", $db->clearText($per_date), $db->clearText($esp));
+        $per_date = $db->clearText($per_date);
+        $esp = $db->clearText($esp);
+        $stmt->bind_param("si", $per_date, $esp);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$lista = [];
@@ -560,8 +565,8 @@ class Agenda {
 				throw new Exception("La inserción de la agenda falló en su preparación.");
 			endif;
 
-			$bind = $stmt->bind_param("iiiiiisssss", $db->clearText($per), $db->clearText($esp), $db->clearText($act), $db->clearText($subesp), $db->clearText($box), $db->clearText($user),
-				$db->clearText($periodo), $db->clearText($dia), $db->clearText($ini), $db->clearText($fin), utf8_decode($db->clearText($cuposObs)));
+			$cuposObs = utf8_decode($db->clearText($cuposObs));
+            $bind = $stmt->bind_param("iiiiiisssss", $per, $esp, $act, $subesp, $box, $user, $periodo, $dia, $ini, $fin, $cuposObs);
 			if (!$bind):
 				throw new Exception("La inserción de la agenda falló en su binding.");
 			endif;
@@ -598,7 +603,8 @@ class Agenda {
 				throw new Exception("La inserción de los cupos de agenda falló en su preparación.");
 			endif;
 
-			$bind = $stmt->bind_param("iid", $db->clearText($id), $db->clearText($tipo), $db->clearText($numero));
+			$numero = $db->clearText($numero);
+			$bind = $stmt->bind_param("iid", $id, $tipo, $numero);
 			if (!$bind):
 				throw new Exception("La inserción de los cupos de agenda falló en su binding.");
 			endif;
@@ -634,7 +640,7 @@ class Agenda {
 				throw new Exception("La actualización de la agenda falló en su preparación.");
 			endif;
 
-			$bind = $stmt->bind_param("ii", $db->clearText($per), $db->clearText($esp));
+			$bind = $stmt->bind_param("ii", $per, $esp);
 			if (!$bind):
 				throw new Exception("La actualización de la agenda falló en su binding.");
 			endif;

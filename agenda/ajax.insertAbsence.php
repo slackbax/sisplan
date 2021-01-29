@@ -45,7 +45,7 @@ if (extract($_POST)):
 
 		foreach ($days as $d):
 			foreach ($boxes as $i):
-				$ins_bh = $bh->set($iperid, $_SESSION['prm_userid'], null, null, $i, $imotivo, $idestino, $d, $h_ini, $h_fin, null, null, $iobs, false, $uniq_id, $db);
+				$ins_bh = $bh->set($iperid, $_SESSION['prm_userid'], null, null, $i, $imotivo, $idestino, $d, $h_ini, $h_fin, $iobs, null, false, $uniq_id, $db);
 
 				if (!$ins_bh['estado']):
 					throw new Exception('Error al guardar los datos de la ausencia. ' . $ins_bh['msg']);

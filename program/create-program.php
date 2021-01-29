@@ -407,8 +407,8 @@
 			<div class="box-body">
 				<!-- Consultas, Controles, Consultas abreviadas -->
 				<?php $t_p = $ta_p = $ts_p = 0 ?>
-				<?php $arr = array(4, 5, 21) ?>
-				<?php foreach ($arr as $i): ?>
+				<?php $exceptions = array(4, 5, 21) ?>
+				<?php foreach ($exceptions as $i): ?>
 					<?php $a = $acp->get($i) ?>
 
 					<?php $d = $dh->getByPerTHDate($id, $i, $prev) ?>
@@ -478,89 +478,132 @@
 						<h3 class="box-title">Otras actividades</h3>
 					</div>
 
-					<div class="box-body">
-						<?php for ($i = 6; $i < 21; $i++): ?>
-							<?php $a = $acp->get($i) ?>
-							<?php $d = $dh->getByPerTHDate($id, $i, $prev) ?>
-							<?php $h_tot += $d->dh_cantidad ?>
+                    <div class="box-body">
+                        <?php $act_list = $acp->getByType(1, $exceptions) ?>
+                        <?php foreach ($act_list as $ind => $act): ?>
+                            <?php $d = $dh->getByPerTHDate($id, $act->acp_id, $prev) ?>
+                            <?php $h_tot += $d->dh_cantidad ?>
+                            <div class="row">
+                                <div class="form-group col-sm-3 has-feedback<?php if ($d->dh_cantidad > 0): ?> has-success<?php endif ?>" id="gact<?php echo $act->acp_id ?>">
+                                    <label class="control-label" for="iacp<?php echo $act->acp_id ?>"><?php echo $act->acp_descripcion ?></label>
+                                    <input type="text" class="form-control input-number ind" id="iNact<?php echo $act->acp_id ?>" name="iact<?php echo $act->acp_id ?>" value="<?php echo $d->dh_cantidad ?>">
+                                    <i class="fa form-control-feedback<?php if ($d->dh_cantidad > 0): ?> fa-check<?php endif ?>" id="iconact<?php echo $act->acp_id ?>"></i>
+                                </div>
+
+                                <?php $div_horas = ($h_disponibles == 0) ? 0 : $d->dh_cantidad / $h_disponibles ?>
+                                <?php $percent = number_format($div_horas, 2, '.', ',') ?>
+                                <div class="form-group col-sm-2 has-feedback<?php if ($percent > 0): ?> has-success<?php endif ?>" id="gpact<?php echo $act->acp_id ?>">
+                                    <label class="control-label" for="pact<?php echo $act->acp_id ?>">% Asignado</label>
+                                    <input type="text" class="form-control input-number" id="iNpact<?php echo $act->acp_id ?>" tabindex="-1" name="pact<?php echo $act->acp_id ?>" value="<?php echo $percent ?>" disabled>
+                                    <i class="fa form-control-feedback<?php if ($percent > 0): ?> has-success<?php endif ?>" id="iconpact<?php echo $act->acp_id ?>"></i>
+                                </div>
+
+                                <?php if ($act->acp_rendimiento): ?>
+                                    <div class="form-group col-sm-2 has-feedback<?php if ($d->dh_rendimiento > 0): ?> has-success<?php endif ?>" id="gract<?php echo $act->acp_id ?>">
+                                        <label class="control-label" for="ract<?php echo $act->acp_id ?>">Rendimiento</label>
+                                        <input type="text" class="form-control input-number rend" id="iNract<?php echo $act->acp_id ?>" name="ract<?php echo $act->acp_id ?>" value="<?php echo $d->dh_rendimiento ?>">
+                                        <i class="fa form-control-feedback<?php if ($d->dh_rendimiento > 0): ?> fa-check<?php endif ?>" id="iconract<?php echo $act->acp_id ?>"></i>
+                                    </div>
+
+                                    <?php $t = $d->dh_cantidad * $d->dh_rendimiento ?>
+                                    <div class="form-group col-sm-2 col-sm-offset-1<?php if ($t > 0): ?> has-success<?php endif ?>" id="gtact<?php echo $act->acp_id ?>">
+                                        <label class="control-label" for="tact<?php echo $act->acp_id ?>">Total</label>
+                                        <input type="text" class="form-control input-number" tabindex="-1" id="iNtact<?php echo $act->acp_id ?>" name="tact<?php echo $act->acp_id ?>" value="<?php echo number_format($t, 2, '.', ',') ?>" disabled>
+                                    </div>
+
+                                    <?php $ts = $t * $sem_disp ?>
+                                    <div class="form-group col-sm-2<?php if ($ts > 0): ?> has-success<?php endif ?>" id="gtaact<?php echo $act->acp_id ?>">
+                                        <label class="control-label" for="taact<?php echo $act->acp_id ?>">Total Anual</label>
+                                        <input type="text" class="form-control input-number" tabindex="-1" id="iNtaact<?php echo $act->acp_id ?>" name="taact<?php echo $act->acp_id ?>" value="<?php echo number_format($ts, 2, '.', ',') ?>" disabled>
+                                    </div>
+                                <?php endif ?>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+
+					<!--<div class="box-body">
+						<?php /*for ($i = 6; $i < 21; $i++): */?>
+							<?php /*$a = $acp->get($i) */?>
+							<?php /*$d = $dh->getByPerTHDate($id, $i, $prev) */?>
+							<?php /*$h_tot += $d->dh_cantidad */?>
 							<div class="row">
-								<div class="form-group col-sm-3 has-feedback<?php if ($d->dh_cantidad > 0): ?> has-success<?php endif ?>" id="gact<?php echo $a->acp_id ?>">
-									<label class="control-label" for="iacp<?php echo $a->acp_id ?>"><?php echo $a->acp_descripcion ?></label>
-									<input type="text" class="form-control input-number ind" id="iNact<?php echo $a->acp_id ?>" name="iact<?php echo $a->acp_id ?>" value="<?php echo $d->dh_cantidad ?>">
-									<i class="fa form-control-feedback<?php if ($d->dh_cantidad > 0): ?> fa-check<?php endif ?>" id="iconact<?php echo $a->acp_id ?>"></i>
+								<div class="form-group col-sm-3 has-feedback<?php /*if ($d->dh_cantidad > 0): */?> has-success<?php /*endif */?>" id="gact<?php /*echo $a->acp_id */?>">
+									<label class="control-label" for="iacp<?php /*echo $a->acp_id */?>"><?php /*echo $a->acp_descripcion */?></label>
+									<input type="text" class="form-control input-number ind" id="iNact<?php /*echo $a->acp_id */?>" name="iact<?php /*echo $a->acp_id */?>" value="<?php /*echo $d->dh_cantidad */?>">
+									<i class="fa form-control-feedback<?php /*if ($d->dh_cantidad > 0): */?> fa-check<?php /*endif */?>" id="iconact<?php /*echo $a->acp_id */?>"></i>
 								</div>
 
-								<?php $div_horas = ($h_disponibles == 0) ? 0 : $d->dh_cantidad / $h_disponibles ?>
-								<?php $percent = number_format($div_horas, 2, '.', ',') ?>
-								<div class="form-group col-sm-2 has-feedback<?php if ($percent > 0): ?> has-success<?php endif ?>" id="gpact<?php echo $a->acp_id ?>">
-									<label class="control-label" for="pact<?php echo $a->acp_id ?>">% Asignado</label>
-									<input type="text" class="form-control input-number" id="iNpact<?php echo $a->acp_id ?>" tabindex="-1" name="pact<?php echo $a->acp_id ?>" value="<?php echo $percent ?>" disabled>
-									<i class="fa form-control-feedback<?php if ($percent > 0): ?> has-success<?php endif ?>" id="iconpact<?php echo $a->acp_id ?>"></i>
+								<?php /*$div_horas = ($h_disponibles == 0) ? 0 : $d->dh_cantidad / $h_disponibles */?>
+								<?php /*$percent = number_format($div_horas, 2, '.', ',') */?>
+								<div class="form-group col-sm-2 has-feedback<?php /*if ($percent > 0): */?> has-success<?php /*endif */?>" id="gpact<?php /*echo $a->acp_id */?>">
+									<label class="control-label" for="pact<?php /*echo $a->acp_id */?>">% Asignado</label>
+									<input type="text" class="form-control input-number" id="iNpact<?php /*echo $a->acp_id */?>" tabindex="-1" name="pact<?php /*echo $a->acp_id */?>" value="<?php /*echo $percent */?>" disabled>
+									<i class="fa form-control-feedback<?php /*if ($percent > 0): */?> has-success<?php /*endif */?>" id="iconpact<?php /*echo $a->acp_id */?>"></i>
 								</div>
 
-								<?php if ($a->acp_rendimiento): ?>
-									<div class="form-group col-sm-2 has-feedback<?php if ($d->dh_rendimiento > 0): ?> has-success<?php endif ?>" id="gract<?php echo $a->acp_id ?>">
-										<label class="control-label" for="ract<?php echo $a->acp_id ?>">Rendimiento</label>
-										<input type="text" class="form-control input-number rend" id="iNract<?php echo $a->acp_id ?>" name="ract<?php echo $a->acp_id ?>" value="<?php echo $d->dh_rendimiento ?>">
-										<i class="fa form-control-feedback<?php if ($d->dh_rendimiento > 0): ?> fa-check<?php endif ?>" id="iconract<?php echo $a->acp_id ?>"></i>
+								<?php /*if ($a->acp_rendimiento): */?>
+									<div class="form-group col-sm-2 has-feedback<?php /*if ($d->dh_rendimiento > 0): */?> has-success<?php /*endif */?>" id="gract<?php /*echo $a->acp_id */?>">
+										<label class="control-label" for="ract<?php /*echo $a->acp_id */?>">Rendimiento</label>
+										<input type="text" class="form-control input-number rend" id="iNract<?php /*echo $a->acp_id */?>" name="ract<?php /*echo $a->acp_id */?>" value="<?php /*echo $d->dh_rendimiento */?>">
+										<i class="fa form-control-feedback<?php /*if ($d->dh_rendimiento > 0): */?> fa-check<?php /*endif */?>" id="iconract<?php /*echo $a->acp_id */?>"></i>
 									</div>
 
-									<?php $t = $d->dh_cantidad * $d->dh_rendimiento ?>
-									<div class="form-group col-sm-2 col-sm-offset-1<?php if ($t > 0): ?> has-success<?php endif ?>" id="gtact<?php echo $a->acp_id ?>">
-										<label class="control-label" for="tact<?php echo $a->acp_id ?>">Total</label>
-										<input type="text" class="form-control input-number" tabindex="-1" id="iNtact<?php echo $a->acp_id ?>" name="tact<?php echo $a->acp_id ?>" value="<?php echo number_format($t, 2, '.', ',') ?>" disabled>
+									<?php /*$t = $d->dh_cantidad * $d->dh_rendimiento */?>
+									<div class="form-group col-sm-2 col-sm-offset-1<?php /*if ($t > 0): */?> has-success<?php /*endif */?>" id="gtact<?php /*echo $a->acp_id */?>">
+										<label class="control-label" for="tact<?php /*echo $a->acp_id */?>">Total</label>
+										<input type="text" class="form-control input-number" tabindex="-1" id="iNtact<?php /*echo $a->acp_id */?>" name="tact<?php /*echo $a->acp_id */?>" value="<?php /*echo number_format($t, 2, '.', ',') */?>" disabled>
 									</div>
 
-									<?php $ts = $t * $sem_disp ?>
-									<div class="form-group col-sm-2<?php if ($ts > 0): ?> has-success<?php endif ?>" id="gtaact<?php echo $a->acp_id ?>">
-										<label class="control-label" for="taact<?php echo $a->acp_id ?>">Total Anual</label>
-										<input type="text" class="form-control input-number" tabindex="-1" id="iNtaact<?php echo $a->acp_id ?>" name="taact<?php echo $a->acp_id ?>" value="<?php echo number_format($ts, 2, '.', ',') ?>" disabled>
+									<?php /*$ts = $t * $sem_disp */?>
+									<div class="form-group col-sm-2<?php /*if ($ts > 0): */?> has-success<?php /*endif */?>" id="gtaact<?php /*echo $a->acp_id */?>">
+										<label class="control-label" for="taact<?php /*echo $a->acp_id */?>">Total Anual</label>
+										<input type="text" class="form-control input-number" tabindex="-1" id="iNtaact<?php /*echo $a->acp_id */?>" name="taact<?php /*echo $a->acp_id */?>" value="<?php /*echo number_format($ts, 2, '.', ',') */?>" disabled>
 									</div>
-								<?php endif ?>
+								<?php /*endif */?>
 							</div>
-						<?php endfor ?>
+						<?php /*endfor */?>
 
-						<?php for ($i = 22; $i < 55; $i++): ?>
-							<?php $a = $acp->get($i) ?>
-							<?php $d = $dh->getByPerTHDate($id, $i, $prev) ?>
-							<?php $h_tot += $d->dh_cantidad ?>
+						<?php /*for ($i = 22; $i < 55; $i++): */?>
+							<?php /*$a = $acp->get($i) */?>
+							<?php /*$d = $dh->getByPerTHDate($id, $i, $prev) */?>
+							<?php /*$h_tot += $d->dh_cantidad */?>
 							<div class="row">
-								<div class="form-group col-sm-3 has-feedback<?php if ($d->dh_cantidad > 0): ?> has-success<?php endif ?>" id="gact<?php echo $a->acp_id ?>">
-									<label class="control-label" for="iacp<?php echo $a->acp_id ?>"><?php echo $a->acp_descripcion ?></label>
-									<input type="text" class="form-control input-number ind" id="iNact<?php echo $a->acp_id ?>" name="iact<?php echo $a->acp_id ?>" value="<?php echo $d->dh_cantidad ?>">
-									<i class="fa form-control-feedback<?php if ($d->dh_cantidad > 0): ?> fa-check<?php endif ?>" id="iconact<?php echo $a->acp_id ?>"></i>
+								<div class="form-group col-sm-3 has-feedback<?php /*if ($d->dh_cantidad > 0): */?> has-success<?php /*endif */?>" id="gact<?php /*echo $a->acp_id */?>">
+									<label class="control-label" for="iacp<?php /*echo $a->acp_id */?>"><?php /*echo $a->acp_descripcion */?></label>
+									<input type="text" class="form-control input-number ind" id="iNact<?php /*echo $a->acp_id */?>" name="iact<?php /*echo $a->acp_id */?>" value="<?php /*echo $d->dh_cantidad */?>">
+									<i class="fa form-control-feedback<?php /*if ($d->dh_cantidad > 0): */?> fa-check<?php /*endif */?>" id="iconact<?php /*echo $a->acp_id */?>"></i>
 								</div>
 
-								<?php $div_horas = ($h_disponibles == 0) ? 0 : $d->dh_cantidad / $h_disponibles ?>
-								<?php $percent = number_format($div_horas, 2, '.', ',') ?>
-								<div class="form-group col-sm-2 has-feedback<?php if ($percent > 0): ?> has-success<?php endif ?>" id="gpact<?php echo $a->acp_id ?>">
-									<label class="control-label" for="pact<?php echo $a->acp_id ?>">% Asignado</label>
-									<input type="text" class="form-control input-number" id="iNpact<?php echo $a->acp_id ?>" tabindex="-1" name="pact<?php echo $a->acp_id ?>" value="<?php echo $percent ?>" disabled>
-									<i class="fa form-control-feedback<?php if ($percent > 0): ?> has-success<?php endif ?>" id="iconpact<?php echo $a->acp_id ?>"></i>
+								<?php /*$div_horas = ($h_disponibles == 0) ? 0 : $d->dh_cantidad / $h_disponibles */?>
+								<?php /*$percent = number_format($div_horas, 2, '.', ',') */?>
+								<div class="form-group col-sm-2 has-feedback<?php /*if ($percent > 0): */?> has-success<?php /*endif */?>" id="gpact<?php /*echo $a->acp_id */?>">
+									<label class="control-label" for="pact<?php /*echo $a->acp_id */?>">% Asignado</label>
+									<input type="text" class="form-control input-number" id="iNpact<?php /*echo $a->acp_id */?>" tabindex="-1" name="pact<?php /*echo $a->acp_id */?>" value="<?php /*echo $percent */?>" disabled>
+									<i class="fa form-control-feedback<?php /*if ($percent > 0): */?> has-success<?php /*endif */?>" id="iconpact<?php /*echo $a->acp_id */?>"></i>
 								</div>
 
-								<?php if ($a->acp_rendimiento): ?>
-									<div class="form-group col-sm-2 has-feedback<?php if ($d->dh_rendimiento > 0): ?> has-success<?php endif ?>" id="gract<?php echo $a->acp_id ?>">
-										<label class="control-label" for="ract<?php echo $a->acp_id ?>">Rendimiento</label>
-										<input type="text" class="form-control input-number rend" id="iNract<?php echo $a->acp_id ?>" name="ract<?php echo $a->acp_id ?>" value="<?php echo $d->dh_rendimiento ?>">
-										<i class="fa form-control-feedback<?php if ($d->dh_rendimiento > 0): ?> fa-check<?php endif ?>" id="iconract<?php echo $a->acp_id ?>"></i>
+								<?php /*if ($a->acp_rendimiento): */?>
+									<div class="form-group col-sm-2 has-feedback<?php /*if ($d->dh_rendimiento > 0): */?> has-success<?php /*endif */?>" id="gract<?php /*echo $a->acp_id */?>">
+										<label class="control-label" for="ract<?php /*echo $a->acp_id */?>">Rendimiento</label>
+										<input type="text" class="form-control input-number rend" id="iNract<?php /*echo $a->acp_id */?>" name="ract<?php /*echo $a->acp_id */?>" value="<?php /*echo $d->dh_rendimiento */?>">
+										<i class="fa form-control-feedback<?php /*if ($d->dh_rendimiento > 0): */?> fa-check<?php /*endif */?>" id="iconract<?php /*echo $a->acp_id */?>"></i>
 									</div>
 
-									<?php $t = $d->dh_cantidad * $d->dh_rendimiento ?>
-									<div class="form-group col-sm-2 col-sm-offset-1<?php if ($t > 0): ?> has-success<?php endif ?>" id="gtact<?php echo $a->acp_id ?>">
-										<label class="control-label" for="tact<?php echo $a->acp_id ?>">Total</label>
-										<input type="text" class="form-control input-number" tabindex="-1" id="iNtact<?php echo $a->acp_id ?>" name="tact<?php echo $a->acp_id ?>" value="<?php echo number_format($t, 2, '.', ',') ?>" disabled>
+									<?php /*$t = $d->dh_cantidad * $d->dh_rendimiento */?>
+									<div class="form-group col-sm-2 col-sm-offset-1<?php /*if ($t > 0): */?> has-success<?php /*endif */?>" id="gtact<?php /*echo $a->acp_id */?>">
+										<label class="control-label" for="tact<?php /*echo $a->acp_id */?>">Total</label>
+										<input type="text" class="form-control input-number" tabindex="-1" id="iNtact<?php /*echo $a->acp_id */?>" name="tact<?php /*echo $a->acp_id */?>" value="<?php /*echo number_format($t, 2, '.', ',') */?>" disabled>
 									</div>
 
-									<?php $ts = $t * $sem_disp ?>
-									<div class="form-group col-sm-2<?php if ($ts > 0): ?> has-success<?php endif ?>" id="gtaact<?php echo $a->acp_id ?>">
-										<label class="control-label" for="taact<?php echo $a->acp_id ?>">Total Anual</label>
-										<input type="text" class="form-control input-number" tabindex="-1" id="iNtaact<?php echo $a->acp_id ?>" name="taact<?php echo $a->acp_id ?>" value="<?php echo number_format($ts, 2, '.', ',') ?>" disabled>
+									<?php /*$ts = $t * $sem_disp */?>
+									<div class="form-group col-sm-2<?php /*if ($ts > 0): */?> has-success<?php /*endif */?>" id="gtaact<?php /*echo $a->acp_id */?>">
+										<label class="control-label" for="taact<?php /*echo $a->acp_id */?>">Total Anual</label>
+										<input type="text" class="form-control input-number" tabindex="-1" id="iNtaact<?php /*echo $a->acp_id */?>" name="taact<?php /*echo $a->acp_id */?>" value="<?php /*echo number_format($ts, 2, '.', ',') */?>" disabled>
 									</div>
-								<?php endif ?>
+								<?php /*endif */?>
 							</div>
-						<?php endfor ?>
-					</div>
+						<?php /*endfor */?>
+					</div>-->
 				<?php endif ?>
 
 				<?php if ($per->per_prid != 4 and $per->per_prid != 14 and $per->per_prid != 16): ?>
